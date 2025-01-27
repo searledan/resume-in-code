@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const getTest = async () => {
       const resp = await fetch("/test");
-      const testResp = await resp.json() as string;
+      const testResp = await resp.text();
 
       setTest(testResp);
     };
