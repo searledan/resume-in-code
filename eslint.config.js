@@ -7,35 +7,45 @@ import react from "eslint-plugin-react";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default tseslint.config(
-	{ignores: ["dist"]},
-	{
-		extends: [js.configs.recommended, ...tseslint.configs.strictTypeChecked, ...tseslint.configs.strictTypeChecked],
-		files: ["src/**/*.{ts,tsx}"],
-		languageOptions: {
-			ecmaVersion: 2020,
-			globals: globals.browser,
-			parserOptions: {
-				project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
-		settings: {react: {version: "18.3"}},
-		plugins: {
-			"@stylistic": stylistic,
-			"react-hooks": reactHooks,
-			"react-refresh": reactRefresh,
-			react,
-		},
-		rules: {
-			...stylistic.configs.customize({
-				flat: true,
-				quotes: "double",
-				semi: true,
-			}).rules,
-			...reactHooks.configs.recommended.rules,
-			"react-refresh/only-export-components": ["warn", {allowConstantExport: true}],
-			...react.configs.recommended.rules,
-			...react.configs["jsx-runtime"].rules,
-		},
-	}
+  { ignores: ["dist"] },
+  {
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.strictTypeChecked,
+    ],
+    files: ["**/*.{ts,tsx}"],
+    ignores: ["functions/**/*.{ts,tsx}"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    settings: { react: { version: "18.3" } },
+    plugins: {
+      "@stylistic": stylistic,
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+      react,
+    },
+    rules: {
+      ...stylistic.configs["recommended-flat"].rules,
+      ...stylistic.configs.customize({
+        flat: true,
+        quotes: "double",
+        semi: true,
+        commaDangle: "never",
+      }).rules,
+      ...reactHooks.configs.recommended.rules,
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
+      ...react.configs.recommended.rules,
+      ...react.configs["jsx-runtime"].rules,
+    },
+  }
 );
