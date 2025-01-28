@@ -37,7 +37,6 @@ export default tseslint.config(
         flat: true,
         quotes: "double",
         semi: true,
-        commaDangle: "never",
       }).rules,
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [
@@ -46,6 +45,6 @@ export default tseslint.config(
       ],
       ...react.configs.recommended.rules,
       ...react.configs["jsx-runtime"].rules,
-    },
+    }
   }
 );

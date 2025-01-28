@@ -4,5 +4,5 @@ interface Env {
 
 export const onRequest: PagesFunction<Env> = async (context) => {
 	const value = await context.env.TEST.get("Test1");
-	return new Response(value);
+	return Response.json(value);
 };
