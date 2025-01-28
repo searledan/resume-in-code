@@ -1,8 +1,9 @@
 interface Env {
-	TEST: KVNamespace;
+	RIC: KVNamespace;
 }
 
 export const onRequest: PagesFunction<Env> = async (context) => {
-	const value = await context.env.TEST.get("Test1");
+	const value = await context.env.RIC.list();
+
 	return Response.json(value);
 };

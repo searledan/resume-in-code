@@ -37,6 +37,7 @@ export default tseslint.config(
         flat: true,
         quotes: "double",
         semi: true,
+        jsxCurlyNewline: "never",
       }).rules,
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": [

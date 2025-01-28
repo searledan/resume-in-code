@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MantineProvider, Code } from "@mantine/core";
+import { MantineProvider, Text, Code } from "@mantine/core";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
@@ -18,20 +18,20 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [test, setTest] = useState<string>();
+  const [data, setData] = useState<string>();
 
   useEffect(() => {
-    const getTest = async () => {
-      const resp = await fetch("/test");
+    const getData = async () => {
+      const response = await fetch("/data");
 
-      if (resp.ok) {
-        const testResp = await resp.json() as string;
+      if (response.ok) {
+        const dataString = await response.json() as string;
 
-        setTest(testResp);
+        setData(dataString);
       }
     };
 
-    void getTest();
+    void getData();
   }, []);
 
   return (
@@ -63,7 +63,10 @@ function App() {
           and save to test HMR
         </p>
       </div>
-      {test && <Code block>{test}</Code>}
+      {data
+        ? <Text>Data loading...</Text>
+        : <Code block>{data}</Code>
+      }
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </MantineProvider>
   );
