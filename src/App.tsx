@@ -63,10 +63,12 @@ function App() {
           and save to test HMR
         </p>
       </div>
+
       {data
-        ? <Text>Data loading...</Text>
-        : <Code block>{data}</Code>
+        ? <Code block>{data}</Code>
+        : <Text>Loading data...</Text>
       }
+
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </MantineProvider>
   );
