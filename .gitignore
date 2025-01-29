@@ -131,7 +131,7 @@ dist
 .pnp.*
 
 ## Visual Studio Code
-.vscode/
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -160,7 +160,7 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vscode/
+.vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea
