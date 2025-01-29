@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MantineProvider, Text, Code } from "@mantine/core";
+import { KVNamespaceListResult } from "@cloudflare/workers-types";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
@@ -18,15 +19,15 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [data, setData] = useState<string>();
+  const [data, setData] = useState<KVNamespaceListResult<unknown>>();
 
   useEffect(() => {
     const getData = async () => {
       const response = await fetch("/data");
 
       if (response.ok) {
-        const dataString = await response.json() as string;
-
+        const dataString = await response.json() as KVNamespaceListResult<string>;
+        console.log(dataString.keys);
         setData(dataString);
       }
     };
@@ -65,9 +66,8 @@ function App() {
       </div>
 
       {data
-        ? <Code block>{data}</Code>
-        : <Text>Loading data...</Text>
-      }
+        ? data.keys.map(x => <Code key={x.name} block>{x.name}</Code>)
+        : <Text>Loading data...</Text>}
 
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </MantineProvider>
