@@ -1,5 +1,6 @@
 import { MantineProvider } from "@mantine/core";
 import { Home } from "./components/Home/";
+import { Test } from "./components/Test";
 
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
@@ -15,7 +16,7 @@ import "@mantine/tiptap/styles.css";
 export const App = () => {
   return (
     <MantineProvider defaultColorScheme="auto">
-      <Home />
+      <Test />
     </MantineProvider>
   );
 };

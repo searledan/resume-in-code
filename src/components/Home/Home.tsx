@@ -5,6 +5,7 @@ import { KVNamespaceListResult } from "@cloudflare/workers-types";
 import reactLogo from "./react.svg";
 import viteLogo from "./vite.svg";
 
+import "./Index.css";
 import "./Home.css";
 
 export const Home = () => {
