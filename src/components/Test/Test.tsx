@@ -8,7 +8,7 @@ export const Test = () => {
       <Grid grow>
         <Grid.Col span={4} bd="1px grey solid" style={{ borderRadius: "10px" }}>
           <Center>
-            <Avatar name="Dan Searle" radius="18rem" size="18rem" color="initials" src="/images/profile/profile1.jpg" bd=".1rem grey solid" />
+            <Avatar name="Dan Searle" alt="Dan Searle" radius="18rem" size="18rem" color="initials" src="/images/profile/profile1.jpg" bd=".1rem grey solid" />
           </Center>
         </Grid.Col>
         <Grid.Col span={8}></Grid.Col>
