@@ -1,26 +1,8 @@
-import { useState, useEffect } from "react";
 import { Container, Grid, Center, Avatar, Text } from "@mantine/core";
-// import { R2ObjectBody } from "@cloudflare/workers-types";
 
-import Picture from "./avatar.jpg";
+// import Picture from "./avatar.jpg";
 
 export const Test = () => {
-  const [profileImage, setProfileImage] = useState<Blob>();
-
-  // useEffect(() => {
-  //   const getProfileImage = async (name: string) => {
-  //     const response = await fetch("/images/" + name);
-
-  //     if (response.ok) {
-  //       const image = await response.json();
-  //       console.log(image);
-  //       setProfileImage(image);
-  //     }
-  //   };
-
-  //   void getProfileImage("profile/profile1.jpg1");
-  // }, []);
-
   return (
     <Container fluid>
       <Grid grow>
