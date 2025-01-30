@@ -1,9 +1,6 @@
-import { Container, Box, Grid, Center, Avatar } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
+import { Container, Grid, Center, Avatar } from "@mantine/core";
 
 export const Test = () => {
-  const { height } = useViewportSize();
-
   return (
     <Container fluid>
       <Grid>

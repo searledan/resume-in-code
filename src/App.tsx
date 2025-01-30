@@ -1,5 +1,4 @@
 import { MantineProvider } from "@mantine/core";
-import { Home } from "./components/Home/";
 import { Test } from "./components/Test";
 
 import "@mantine/core/styles.css";
