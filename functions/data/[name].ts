@@ -3,7 +3,7 @@ interface Env {
 }
 
 export const onRequest: PagesFunction<Env> = async (context) => {
-    const value = await context.env.RIC.get(context.params.name);
+    const value = await context.env.RIC.get(context.params.name as string);
 
     return Response.json(value);
 };
