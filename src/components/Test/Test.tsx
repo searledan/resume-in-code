@@ -2,17 +2,18 @@ import { Container, Grid, Center, Avatar, Box, Text, Tabs } from "@mantine/core"
 import { useViewportSize } from "@mantine/hooks";
 import { IconBriefcase, IconBulb, IconMail } from "@tabler/icons-react";
 
-import Picture from "./avatar.jpg";
+import classes from "./Test.module.css";
+import picture from "./Avatar.jpg";
 
 export const Test = () => {
-  const { height } = useViewportSize();
+  // const { height } = useViewportSize();
 
   return (
     <Container fluid m={100}>
       <Grid grow>
-        <Grid.Col span={4} mih={height}>
+        <Grid.Col span={4}>
           <Center>
-            <Avatar name="Dan Searle" alt="Dan Searle" radius="18rem" size="18rem" color="initials" src={Picture} bd=".1rem var(--mantine-color-dark-4) solid" />
+            <Avatar className={classes.border} name="Dan Searle" alt="Dan Searle" radius="18rem" size="18rem" color="initials" src={picture} />
           </Center>
 
           <Box pt={25} px={100}>
@@ -23,7 +24,7 @@ export const Test = () => {
 
         <Grid.Col span={8}>
           <Grid>
-            <Grid.Col span={12} my={25} bd="1px var(--mantine-color-dark-4) solid" style={{ borderRadius: "5px" }}>
+            <Grid.Col className={classes.border} span={12} my={25}>
               <Text p={25}>Welcome, welcome, welcome!</Text>
             </Grid.Col>
 

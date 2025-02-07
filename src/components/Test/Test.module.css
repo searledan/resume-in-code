@@ -1,0 +1,6 @@
+.border {
+    border-width: .1rem;
+    border-color: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+    border-style: solid;
+    border-radius: 5px;
+}
