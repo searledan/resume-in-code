@@ -11,5 +11,4 @@
     "editor.formatOnSave": true,
     "eslint.lintTask.enable": true,
     "eslint.lintTask.options": ". --fix",
-    "azureAutomation.directory.basePath": "c:\\Program Files\\Microsoft VS Code",
 }

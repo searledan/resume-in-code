@@ -1,12 +1,12 @@
-import { Container, Grid, Center, Avatar, Box, Text, Tabs } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
+import { useState } from "react";
+import { Container, Grid, Center, NativeSelect, Avatar, Box, Text, Tabs } from "@mantine/core";
 import { IconBriefcase, IconBulb, IconMail } from "@tabler/icons-react";
 
 import classes from "./Test.module.css";
 import picture from "./Avatar.jpg";
 
 export const Test = () => {
-  // const { height } = useViewportSize();
+  const [tailoredValue, setTailoredValue] = useState("General");
 
   return (
     <Container fluid m={100}>
@@ -24,11 +24,20 @@ export const Test = () => {
 
         <Grid.Col span={8}>
           <Grid>
-            <Grid.Col className={classes.border} span={12} my={25}>
+            <Grid.Col className={classes.border} span={12} my={25} p={0}>
               <Text p={25}>Welcome, welcome, welcome!</Text>
             </Grid.Col>
 
-            <Grid.Col span={12} my={25}>
+            <Grid.Col className={classes.border} span={12} my={25}>
+              <NativeSelect
+                size="md"
+                label="Tailored Resume"
+                value={tailoredValue}
+                onChange={(event) => { setTailoredValue(event.currentTarget.value); }}
+                data={["General", "Infrastructure", "DevOps", "Cloud"]}
+                mb={25}
+              />
+
               <Tabs variant="outline" defaultValue="gallery">
                 <Tabs.List grow>
                   <Tabs.Tab value="gallery" leftSection={<IconBriefcase size={16} />}>
