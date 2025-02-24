@@ -1,0 +1,22 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "resume-in-code",
+    "pages_build_output_dir": "./dist",
+    "compatibility_date": "2025-02-15",
+    "observability": {
+        "enabled": true,
+        "head_sampling_rate": 1
+    },
+    "kv_namespaces": [
+        {
+            "binding": "RIC",
+            "id": "0798449092b845b58d054f85728be792"
+        }
+    ],
+    "r2_buckets": [
+        {
+            "binding": "IMAGES",
+            "bucket_name": "images"
+        }
+    ]
+}
