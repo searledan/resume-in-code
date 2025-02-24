@@ -3,10 +3,6 @@
     "name": "resume-in-code",
     "pages_build_output_dir": "./dist",
     "compatibility_date": "2025-02-15",
-    "observability": {
-        "enabled": true,
-        "head_sampling_rate": 1
-    },
     "kv_namespaces": [
         {
             "binding": "RIC",
